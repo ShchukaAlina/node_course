@@ -1,0 +1,23 @@
+{
+  "name": "node_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShchukaAlina/node_course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShchukaAlina/node_course/issues"
+  },
+  "homepage": "https://github.com/ShchukaAlina/node_course#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
