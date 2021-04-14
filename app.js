@@ -6,12 +6,14 @@ const adminRouters = require('./routes/admin');
 const shopRouters = require('./routes/shop');
 
 const app = express();
+app.set("view engine", "pug");
+app.set("views", "views");
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/admin', adminRouters);
+app.use('/admin', adminRouters.routers);
 app.use(shopRouters);
 
 app.use((req, res, next) => {
