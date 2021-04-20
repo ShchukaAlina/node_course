@@ -1,6 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-
 const Product = require('../models/product');
 
 exports.getAddProducts = (req, res) => {
@@ -9,11 +6,12 @@ exports.getAddProducts = (req, res) => {
 
 exports.postAddProducts = (req, res) => {
     const product = new Product(req.body.title)
-    let pathFile = path.join(process.mainModule.filename)
+    product.save();
     res.redirect('/');
 }
 
 exports.getProducts = (req, res) => {
-    const products = Product.fetchAll();
-    res.render("shop", {docTitle: "Shop", prod: products, path: "/"})
+    Product.fetchAll((products) => {
+        res.render("shop", {docTitle: "Shop", prod: products, path: "/"});
+    });
 }
