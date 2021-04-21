@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../layouts/header")%>
+
+<body>
+<header class="main-header">
+    <%- include("../layouts/navigation")%>
+</header>
+
+<main>
+    <form class="product-form" action="/admin/add-product" method="POST">
+        <div class="form-control">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <label for="title">Image</label>
+            <input type="text" name="imgUrl" id="imgUrl">
+            <label for="title">Price</label>
+            <input type="number" name="price" id="price" STEP="any">
+            <label for="title">Description</label>
+            <textarea name="description" id="title" rows="5"></textarea>
+        </div>
+
+        <button type="submit">Add Product</button>
+    </form>
+</main>
+</body>
+</html>
