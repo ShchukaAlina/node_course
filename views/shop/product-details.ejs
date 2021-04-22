@@ -1,0 +1,16 @@
+<html lang="eu">
+    <%- include('../layouts/header')%>
+    <body>
+    <header class="main-header">
+        <%- include("../layouts/navigation")%>
+    </header>
+    <div class="centered">
+        <h1><%= product.title%></h1>
+        <hr>
+        <img src="<%= product.imgUrl%>" alt="<%= product.title%>">
+        <h2><%= product.price%></h2>
+        <p><%= product.description%></p>
+        <%- include("../layouts/add-to-card", { product: product }) %>
+    </div>
+    </body>
+</html>
