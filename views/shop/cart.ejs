@@ -4,6 +4,22 @@
         <header class="main-header">
             <%- include("../layouts/navigation")%>
         </header>
-        hello
+        <main>
+            <% if(products.length > 0 ) {%>
+                <ul>
+                    <% products.forEach(pr => {%>
+                        <li>
+                            <p><%= pr.productData.title%> (<%=pr.qty%>)</p>
+                            <form action="/cart-delete-item" method="POST">
+                                <input type="hidden" value="<%= pr.productData.id %>" name="productId">
+                                <button class="btn" type="submit">Delete</button>
+                            </form>
+                        </li>
+                    <% }) %>
+                </ul>
+            <%} else {%>
+                <h1>No products in Cart</h1>
+            <% } %>
+        </main>
     </body>
 </html>
